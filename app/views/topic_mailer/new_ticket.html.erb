@@ -15,7 +15,7 @@
   <p>
     <%= t('above_this_line', default: "Make sure your reply appears above this line") %><br/>
     =================================================================<br/>
-    <%= t('message_id', default: 'Message ID') %>:<%= @topic.id %></br>
+    <%= t('message_id', default: 'Message ID') %>:<%= @topic.id %><br/>
   </p>
   <p>
     <%= t('hello', user_name: @topic.user.login) %>,
@@ -28,9 +28,5 @@
     <%= t('view_online', default: 'View this online:') %> <%= ticket_url(@topic, host: AppSettings['settings.site_url']) %>
   </p>
   <br/>
-  <p>
-    <strong>Powered by Helpy</strong><br/>
-    Get a Free Helpy Support System for your Site at http://helpy.io/
-  </p>
   </body>
 </html>

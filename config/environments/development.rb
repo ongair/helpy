@@ -50,6 +50,10 @@ Rails.application.configure do
   # Raises error for missing translations
   config.action_view.raise_on_missing_translations = false
 
+  config.action_mailer.default_url_options = { host: Settings.site_url }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = Settings.send_email
+
   config.i18n.available_locales = [:en, :es, :de, :fr, :it, :et, :ca, :sv, :hu, :ru, :ja, :hi, 'zh-cn', 'zh-tw', 'pt', :nl, 'tr', 'pt-br', :fa, :fi, :id, :ar, :ko, :ms, :uk]
   config.i18n.default_locale = :en
   config.i18n.fallbacks = true
