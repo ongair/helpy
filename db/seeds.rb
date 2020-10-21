@@ -8,12 +8,12 @@
 
 # Users
 user_admin = User.create!(
-  name: 'Admin',
+  name: 'System Admin',
   login:'admin',
-  email: 'admin@test.com',
+  email: 'tech@ongair.im',
   password:'12345678',
   role: 'admin',
-  thumbnail: '',
+  thumbnail: 'https://randomuser.me/api/portraits/men/54.jpg',
   medium_image: '',
   large_image: '',
   admin: true
@@ -28,20 +28,20 @@ user_system = User.create!(
   admin: false
 )
 
-user_scott = User.create!(
-  name: 'Scott Miller',
-  login: 'scott',
-  email: 'scott+demo@helpy.io',
-  password: '12345678',
-  role: 'user',
-  admin: false,
-  bio: 'I am the creator of Helpy.io, the open source helpdesk alternative. Welcome to the system!',
-  linkedin: 'http://www.linkedin.com/in/optimizeit',
-  thumbnail: '14369.jpg',
-  medium_image: '14369.jpg',
-  large_image: '14369.jpg',
-  company: ''
-)
+# user_scott = User.create!(
+#   name: 'Scott Miller',
+#   login: 'scott',
+#   email: 'scott+demo@helpy.io',
+#   password: '12345678',
+#   role: 'user',
+#   admin: false,
+#   bio: 'I am the creator of Helpy.io, the open source helpdesk alternative. Welcome to the system!',
+#   linkedin: 'http://www.linkedin.com/in/optimizeit',
+#   thumbnail: '14369.jpg',
+#   medium_image: '14369.jpg',
+#   large_image: '14369.jpg',
+#   company: ''
+# )
 
 
 tag = ActsAsTaggableOn::Tag.create(name: 'sales', description: 'Sales Inquiries')
@@ -119,104 +119,104 @@ templates.docs.create!(title: 'Customer_footer', body:'<p style="color: #666;">
 
 
 # Create first example tickets
-topic = Forum.first.topics.create(
-  name: 'Asking for a favor... give us a star!',
-  private: true,
-  assigned_user_id: user_admin.id,
-  user_id: user_scott.id,
-  current_status: 'pending',
-  channel: 'install',
-  tag_list: 'example tag, welcome, important'
-)
+# topic = Forum.first.topics.create(
+#   name: 'Asking for a favor... give us a star!',
+#   private: true,
+#   assigned_user_id: user_admin.id,
+#   user_id: user_scott.id,
+#   current_status: 'pending',
+#   channel: 'install',
+#   tag_list: 'example tag, welcome, important'
+# )
 
-topic.posts.create(
-  body: '
-  Thank you so much for checking out Helpy! I have a favor to ask... If you like what
-  we are doing with Helpy, please take a moment and give the project a star on GitHub.
-  Take a look in the lower right corner of the Helpy UI and you will see a little icon
-  showing how many stars the open source version already has.  Just click this and then
-  click again on GitHub to give your star.
-  ',
-  user_id: user_scott.id,
-  kind: 'first'
-)
+# topic.posts.create(
+#   body: '
+#   Thank you so much for checking out Helpy! I have a favor to ask... If you like what
+#   we are doing with Helpy, please take a moment and give the project a star on GitHub.
+#   Take a look in the lower right corner of the Helpy UI and you will see a little icon
+#   showing how many stars the open source version already has.  Just click this and then
+#   click again on GitHub to give your star.
+#   ',
+#   user_id: user_scott.id,
+#   kind: 'first'
+# )
 
 # Create first example tickets
-topic = Forum.first.topics.create(
-  name: 'Welcome to Helpy',
-  private: true,
-  assigned_user_id: user_admin.id,
-  user_id: user_scott.id,
-  current_status: 'pending',
-  channel: 'install',
-  tag_list: 'welcome, important'
-)
+# topic = Forum.first.topics.create(
+#   name: 'Welcome to Helpy',
+#   private: true,
+#   assigned_user_id: user_admin.id,
+#   user_id: user_scott.id,
+#   current_status: 'pending',
+#   channel: 'install',
+#   tag_list: 'welcome, important'
+# )
 
-topic.posts.create(
-  body: '
-  Thanks for installing Helpy and giving it a try  <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4aa.png?v8" style="width:20px;">
-
-  As the founding creator of Helpy, I am excited you decided to give it a look
-  and I really hope you use it in your business. I have heard from a lot of you
-  that Helpy is the best open source customer support solution out there, and is
-  better than even most commercial choices, so thanks for that if you are included
-  in this group.   <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png?v8" style="width:20px;">
-
-  <b>What is Helpy?</b>
-
-  Helpy is a software platform that provides everything you need to run an awesome
-  ticketing helpdesk and self service helpcenter website. You can even run a support
-  forum where customers can help each other.&nbsp; The best part is Helpy core is 100%
-  open source.
-
-  <b>License, Open Core</b>
-
-  Helpy is licensed under the MIT license, which means you can do, well, pretty
-  much anything you want with it, other than removing the copyright/credits. Helpy
-  is an open core application, which means the core functionality is open source,
-  but there is additional functionality you can get if you purchase a license to
-  the enhanced version.
-
-
-  <b>Support Open Source development by upgrading to Helpy Cloud</b>
-
-  This installation of Helpy can easily be upgraded to the full Helpy Cloud
-  edition. Upgrading gets you access to our private gem server and a license to use
-  all of the cloud tier addons which are not open source and add amazing capabilities
-  like:
-
-  <ul>
-    <li>In App Notifications</li>
-    <li>Realtime UI</li>
-    <li>Advanced Reporting</li>
-    <li>Advanced Search</li>
-    <li>Triggers</li>
-    <li>Custom Views</li>
-    <li>LDAP</li>
-    <li>Protected Helpcenter</li>
-    <li>Carin the Customer Service Chatbot</li>
-    <li>Agent Collision Detection</li>
-    <li>Helpy Chat (coming soon)</li>
-  </ul>
-
-  <a href="https://helpy.io/on-premise" target="_blank" class="btn btn-default">Purchase Now</a><br/>
-  A full, current comparison of Helpy options is available here: <a href="https://helpy.io/open-source-helpdesk/">Comparison</a>
-
-  <b>Sponsorship Opportunities</b>
-
-  Helpy is the leading open source helpdesk on GitHub, has over 100,000 Docker installs,
-  and has been featured on Product Hunt numerous times.  We have amassed a large audience of
-  developers, open source users, startups and CIO/CTO types.
-
-  If your business sells to these types of people and you value aligning with the open
-  source movement, sponsoring Helpy makes a lot of sense:
-
-  The proceeds from supporters, sponsors and paying customers goes right back into
-  further platform development. &nbsp;Supporting the project in some way makes good
-  sense if you use Helpy in your business.
-
-  <a href="https://www.patreon.com/helpyio" target="_blank" class="btn btn-default">Become a Supporter <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4aa.png?v8" style="width: 20px;"></a>
-  ',
-  user_id: user_scott.id,
-  kind: 'first'
-)
+# topic.posts.create(
+#   body: '
+#   Thanks for installing Helpy and giving it a try  <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8" style="width:20px;"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4aa.png?v8" style="width:20px;">
+#
+#   As the founding creator of Helpy, I am excited you decided to give it a look
+#   and I really hope you use it in your business. I have heard from a lot of you
+#   that Helpy is the best open source customer support solution out there, and is
+#   better than even most commercial choices, so thanks for that if you are included
+#   in this group.   <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png?v8" style="width:20px;">
+#
+#   <b>What is Helpy?</b>
+#
+#   Helpy is a software platform that provides everything you need to run an awesome
+#   ticketing helpdesk and self service helpcenter website. You can even run a support
+#   forum where customers can help each other.&nbsp; The best part is Helpy core is 100%
+#   open source.
+#
+#   <b>License, Open Core</b>
+#
+#   Helpy is licensed under the MIT license, which means you can do, well, pretty
+#   much anything you want with it, other than removing the copyright/credits. Helpy
+#   is an open core application, which means the core functionality is open source,
+#   but there is additional functionality you can get if you purchase a license to
+#   the enhanced version.
+#
+#
+#   <b>Support Open Source development by upgrading to Helpy Cloud</b>
+#
+#   This installation of Helpy can easily be upgraded to the full Helpy Cloud
+#   edition. Upgrading gets you access to our private gem server and a license to use
+#   all of the cloud tier addons which are not open source and add amazing capabilities
+#   like:
+#
+#   <ul>
+#     <li>In App Notifications</li>
+#     <li>Realtime UI</li>
+#     <li>Advanced Reporting</li>
+#     <li>Advanced Search</li>
+#     <li>Triggers</li>
+#     <li>Custom Views</li>
+#     <li>LDAP</li>
+#     <li>Protected Helpcenter</li>
+#     <li>Carin the Customer Service Chatbot</li>
+#     <li>Agent Collision Detection</li>
+#     <li>Helpy Chat (coming soon)</li>
+#   </ul>
+#
+#   <a href="https://helpy.io/on-premise" target="_blank" class="btn btn-default">Purchase Now</a><br/>
+#   A full, current comparison of Helpy options is available here: <a href="https://helpy.io/open-source-helpdesk/">Comparison</a>
+#
+#   <b>Sponsorship Opportunities</b>
+#
+#   Helpy is the leading open source helpdesk on GitHub, has over 100,000 Docker installs,
+#   and has been featured on Product Hunt numerous times.  We have amassed a large audience of
+#   developers, open source users, startups and CIO/CTO types.
+#
+#   If your business sells to these types of people and you value aligning with the open
+#   source movement, sponsoring Helpy makes a lot of sense:
+#
+#   The proceeds from supporters, sponsors and paying customers goes right back into
+#   further platform development. &nbsp;Supporting the project in some way makes good
+#   sense if you use Helpy in your business.
+#
+#   <a href="https://www.patreon.com/helpyio" target="_blank" class="btn btn-default">Become a Supporter <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4aa.png?v8" style="width: 20px;"></a>
+#   ',
+#   user_id: user_scott.id,
+#   kind: 'first'
+# )

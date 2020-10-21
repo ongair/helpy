@@ -19,6 +19,7 @@ done
 
 echo "postgres is now avaliable"
 
+DO_NOT_PREPARE=true
 RUN_PREPARE=${DO_NOT_PREPARE:-false}
 
 if [[ "$RUN_PREPARE" = "false" ]]

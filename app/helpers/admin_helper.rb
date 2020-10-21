@@ -10,7 +10,7 @@ module AdminHelper
   end
 
   def admin_title
-    "[Helpy Admin]"
+    "[Ongair Admin]"
   end
 
   def upper_nav_item(label, path, controllers, actions, icon="")

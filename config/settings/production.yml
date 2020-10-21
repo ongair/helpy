@@ -1,1 +1,7 @@
 send_email: true
+imap_server: imap.gmail.com
+imap_username: tech@ongair.im
+imap_password: sproutk3
+imap_security: ssl
+smtp_mail_username: AKIA2AM5EEY5FOY4YTBR # Enter your SMTP email username
+smtp_mail_password: BD+byg6uqyEs2OxgwHmiAKjSrzfHI8Gz5F4rDgjBrIyF # Enter your SMTP email password
