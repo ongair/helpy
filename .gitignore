@@ -33,7 +33,7 @@ public/uploads
 .vscode
 
 # Docker stuff
-.env
+#.env
 /certs
 /postgres
 
