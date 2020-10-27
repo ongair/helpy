@@ -4,7 +4,12 @@ ENV RAILS_ENV=production \
     HELPY_HOME=/helpy \
     HELPY_USER=helpyuser \
     HELPY_SLACK_INTEGRATION_ENABLED=true \
-    BUNDLE_PATH=/opt/helpy-bundle
+    BUNDLE_PATH=/opt/helpy-bundle \
+    POSTGRES_HOST=helpy-demo.cxjhnbkiyvpw.eu-west-1.rds.amazonaws.com \
+    POSTGRES_DB=helpy_production \
+    POSTGRES_USER=helpy \
+    POSTGRES_PASSWORD=password \
+    SECRET_KEY_BASE=some_secret_key_base_change_in_production
 
 RUN apt-get update \
   && apt-get upgrade -y \
@@ -24,12 +29,6 @@ RUN chown -R $HELPY_USER $HELPY_HOME
 
 USER $HELPY_USER
 
-
-# add the slack integration gem to the Gemfile if the HELPY_SLACK_INTEGRATION_ENABLED is true
-# use `test` for sh compatibility, also use only one `=`. also for sh compatibility
-RUN test "$HELPY_SLACK_INTEGRATION_ENABLED" = "true" \
-    && sed -i '128i\gem "helpy_slack", git: "https://github.com/helpyio/helpy_slack.git", branch: "master"' $HELPY_HOME/Gemfile
-
 RUN bundle install --without test development
 
 # manually create the /helpy/public/assets and uploads folders and give the helpy user rights to them
@@ -46,4 +45,5 @@ USER $HELPY_USER
 
 COPY docker/database.yml $HELPY_HOME/config/database.yml
 
+EXPOSE 8080
 CMD ["/bin/bash", "/helpy/docker/run.sh"]
