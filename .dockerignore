@@ -1,2 +1,6 @@
 certs
 postgres
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore

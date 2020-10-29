@@ -33,8 +33,12 @@ public/uploads
 .vscode
 
 # Docker stuff
-.env
+#.env
 /certs
 /postgres
 
 /.fossa.yml
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

@@ -154,15 +154,17 @@ gem "recaptcha", '< 3', require: "recaptcha/rails" # TODO: Update
 gem 'best_in_place', '~> 3.1'
 
 # Add onboarding component
-gem 'helpy_onboarding', git: 'https://github.com/helpyio/helpy_onboarding', branch: 'master'
-gem 'helpy_imap', git: 'https://github.com/helpyio/helpy_imap', branch: 'master'
+# gem 'helpy_onboarding', git: 'https://github.com/helpyio/helpy_onboarding', branch: 'master'
+# gem 'helpy_onboarding', path: '../helpy_onboarding'
+# gem 'helpy_imap', path: '../helpy_imap'
+gem 'helpy_imap', git: 'https://github.com/ongair/helpy_imap', branch: 'master'
 
 group :development, :test do
   # Audit Gemfile for security vulnerabilities
   gem 'bundler-audit', require: false
   gem 'byebug'
-  gem 'pry'
-  gem 'pry-byebug'
+  # gem 'pry'
+  # gem 'pry-byebug'
   gem 'spring', '~> 2.0.2'
   gem 'annotate'
   gem 'brakeman', require: false
@@ -210,7 +212,7 @@ end
 
 group :production do
   # Uncomment this gem for Heroku:
-  # gem 'rails_12factor'
+  gem 'rails_12factor'
   gem 'unicorn'
 end
 

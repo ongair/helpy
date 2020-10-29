@@ -83,7 +83,7 @@ en:
   select_locale: "Change your Locale"
 
   # footer
-  powered_by: "Powered by Helpy. An Open Source Helpdesk."
+  powered_by: "Ongair."
   get_your_copy: "Grab your copy on GitHub"
   version: "Version:"
 
@@ -454,7 +454,7 @@ en:
   mail_smtp: SMTP Server
   mail_port: SMTP Port
   mail_domain: SMTP Domain
-  spam_assassin_reject: SpamAssassin Threshold for rejecting incoming email tickets 
+  spam_assassin_reject: SpamAssassin Threshold for rejecting incoming email tickets
   spam_assassin_filter: SpamAssassin Threshold for marking incoming tickets spam
   email_blacklist: Automatically mark tickets from these addresses as spam (separate multiple with commas)
 

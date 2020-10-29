@@ -1,5 +1,8 @@
 <% title "#{AppSettings['settings.site_name']}: #{@page_title}" %>
 
+
+<%= link_to(t('devise.sessions.new.sign_in'), new_user_session_path, class: 'btn btn-default') %>
+
 <% if knowledgebase? %>
   <div class="row">
     <% @categories.each do |category| %>
@@ -9,7 +12,7 @@
     <% end %>
   </div>
 <% else %>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-1 col-sm-1"></div>
     <div class="col-md-4 col-sm-4 main-option-container">
       <div class="jumbotron text-center main-option">
@@ -31,5 +34,5 @@
       </div>
     </div>
     <div class="col-md-1 col-sm-1"></div>
-  </div>
+  </div-->
 <% end %>

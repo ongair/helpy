@@ -6,9 +6,9 @@ namespace :update do
     cat.docs.create(title: 'Customer_header', body:'<!-- -->') #unless Doc.where(title: 'customer_header').count > 0
     cat.docs.create(title: 'Customer_footer', body:'<p style="color: #666;">
   <small>
-    <strong>Powered by Helpy</strong><br>
-  	Get a Free Helpy Support System for your Site at
-  	<a href="https://helpy.io/">https://helpy.io/</a>
+    <strong>Powered by Ongair</strong><br>
+  	Keep in touch with your Customers from anywhere
+  	<a href="https://helpy.io/">https://ongair.im/</a>
   </small>
 </p>
 <p style="color: #666;"><small>%ticket_link%</small></p>') #unless Doc.where(title: 'customer_footer').count > 0
